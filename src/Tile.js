@@ -11,10 +11,17 @@ class Tile extends Component {
     this.state = {
       color: choice(this.props.tiles),
     };
-    this.handClick = this.handClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-  changeTile() {}
-  handClick(e) {
+  changeTile() {
+    //get a new random tile if its the same color again
+    let randTile;
+    do {
+      randTile = choice(this.props.tiles);
+    } while (this.state.color === randTile);
+    this.setState({ color: randTile });
+  }
+  handleClick(e) {
     this.changeTile();
   }
   render() {
@@ -22,7 +29,7 @@ class Tile extends Component {
       <div
         className="Tile"
         style={{ backgroundColor: this.state.color }}
-        onClick={this.handClick}
+        onClick={this.handleClick}
       ></div>
     );
   }
