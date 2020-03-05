@@ -1,10 +1,10 @@
 import "./App.css";
-import Tile from "./Tile";
+import Tilebox from "./Tilebox";
 
 function App() {
   return (
     <div className="App">
-      <Tile />
+      <Tilebox />
     </div>
   );
 }

@@ -3,9 +3,6 @@ import "./Tile.css";
 import { choice } from "./Helpers";
 
 class Tile extends Component {
-  static defaultProps = {
-    tiles: ["red", "green", "lightblue", "purple", "orange"],
-  };
   constructor(props) {
     super(props);
     this.state = {
